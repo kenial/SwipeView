@@ -106,8 +106,8 @@
     }
     
     //configure view
-    label.backgroundColor = (self.colors)[index];
-    label.text = [NSString stringWithFormat:@"%i", index];
+    label.backgroundColor = (self.colors)[(uint)index];
+    label.text = [NSString stringWithFormat:@"%ld", index];
     
     //return view
     return view;
@@ -121,7 +121,7 @@
 
 - (void)swipeView:(__unused SwipeView *)swipeView didSelectItemAtIndex:(NSInteger)index
 {
-    NSLog(@"Selected item at index %i", index);
+    NSLog(@"Selected item at index %li", (long)index);
 }
 
 - (IBAction)pageControlTapped

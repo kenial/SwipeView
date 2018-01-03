@@ -20,6 +20,7 @@
     _swipeView.pagingEnabled = YES;
     _swipeView.itemsPerPage = 1;
     _swipeView.truncateFinalPage = YES;
+    _swipeView.cellSpacing = 2.0f;
 }
 
 - (void)dealloc

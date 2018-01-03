@@ -625,7 +625,7 @@
     [self layOutItemViews];
     [_delegate swipeViewDidScroll:self];
     
-    if (!_defersItemViewLoading || fabsf([self minScrollDistanceFromOffset:_lastUpdateOffset toOffset:_scrollOffset]) >= 1.0f)
+    if (!_defersItemViewLoading || fabs([self minScrollDistanceFromOffset:_lastUpdateOffset toOffset:_scrollOffset]) >= 1.0f)
     {
         //update item index
         _currentItemIndex = [self clampedIndex:roundf(_scrollOffset)];
@@ -785,7 +785,7 @@
         {
             wrappedDistance = -wrappedDistance;
         }
-        return (fabsf(directDistance) <= fabsf(wrappedDistance))? directDistance: wrappedDistance;
+        return (fabs(directDistance) <= fabs(wrappedDistance))? directDistance: wrappedDistance;
     }
     return directDistance;
 }
@@ -806,7 +806,7 @@
 
 - (void)setScrollOffset:(CGFloat)scrollOffset
 {
-    if (fabsf(_scrollOffset - scrollOffset) > 0.0001f)
+    if (fabs(_scrollOffset - scrollOffset) > 0.0001f)
     {
         _scrollOffset = scrollOffset;
         _lastUpdateOffset = _scrollOffset - 1.0f; //force refresh
